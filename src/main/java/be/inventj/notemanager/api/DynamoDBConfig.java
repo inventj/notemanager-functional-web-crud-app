@@ -33,7 +33,7 @@ public class DynamoDBConfig {
                                           .withCredentials(getBasicAWSCredentials())
                                           .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(
                                                   amazonDynamoDBEndpoint,
-                                                  ""))
+                                                  "eu-central-1"))
                                           .build();
 
         return amazonDynamoDB;
