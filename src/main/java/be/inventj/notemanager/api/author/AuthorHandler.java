@@ -7,6 +7,8 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Optional;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 /**
@@ -28,5 +30,23 @@ public class AuthorHandler {
     public Mono<ServerResponse> add(Author author) {
         Author newAuthor = repository.save(author);
         return ServerResponse.ok().contentType(APPLICATION_JSON).body(Mono.just(newAuthor.getId()), String.class);
+    }
+
+    public Mono<ServerResponse> update(Author author) {
+
+        Optional<Author> current = repository.findById(author.getId());
+        if (current.isPresent()) {
+            current.get().setName(author.getName());
+            current.get().setEmail(author.getEmail());
+        }
+        Author result = repository.save(current.get());
+        return ServerResponse.ok().contentType(APPLICATION_JSON).body(Mono.just(result.getId()), String.class);
+    }
+
+    public Mono<ServerResponse> delete(Author author) {
+        repository.deleteById(author.getId());
+        return ServerResponse.ok()
+                             .contentType(APPLICATION_JSON)
+                             .body(Mono.just("author " + author.getId() + " deleted"), String.class);
     }
 }

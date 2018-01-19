@@ -10,6 +10,6 @@ import java.util.List;
  * Created by j.peeters on 05/12/2017.
  */
 @EnableScan
-public interface AuthorRepository extends CrudRepository<Author, Long> {
+public interface AuthorRepository extends CrudRepository<Author, String> {
     List<Author> findAll();
 }
