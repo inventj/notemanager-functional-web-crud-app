@@ -25,7 +25,9 @@ pipeline {
             }
         }
         stage ('Deploy') {
-           echo 'todo deploy'
+           steps {
+                echo 'This is a minimal pipeline.'
+            }
         }
     }
 }
