@@ -24,5 +24,8 @@ pipeline {
                 }
             }
         }
+        stage ('Deploy') {
+           echo 'todo deploy'
+        }
     }
 }
