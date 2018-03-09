@@ -28,7 +28,8 @@ pipeline {
                 echo "i am "
                 sh 'whoami'
                 sh 'ssh -o StrictHostKeyChecking=no -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com'
-                echo "Start application"
+                 sh 'exit'
+               echo "Start application"
                 echo "DONE"
             }
         }
