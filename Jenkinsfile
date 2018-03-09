@@ -22,7 +22,11 @@ pipeline {
         }
         stage ('Deploy') {
            steps {
-                echo 'This is a minimal pipeline.'
+                echo "Starting Deploy phase"
+                echo "Stop running application"
+                echo "Copy JAR"
+                echo "Start application"
+                echo "DONE"
             }
         }
     }
