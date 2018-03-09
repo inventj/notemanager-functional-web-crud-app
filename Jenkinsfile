@@ -29,7 +29,8 @@ pipeline {
                 sh 'whoami'
                 sh '''
                 ssh -o StrictHostKeyChecking=no -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com
-                 exit
+                 mkdir test
+                 ls -ltr
                  '''
                echo "Start application"
                 echo "DONE"
