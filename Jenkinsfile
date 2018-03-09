@@ -25,6 +25,8 @@ pipeline {
                 echo "Starting Deploy phase"
                 echo "Stop running application"
                 echo "Copy JAR"
+                echo "i am "
+                sh 'whoami'
                 sh 'ssh -i /home/ec2-user/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com'
                 echo "Start application"
                 echo "DONE"
