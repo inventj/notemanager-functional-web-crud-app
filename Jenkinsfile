@@ -28,7 +28,7 @@ pipeline {
                 echo "i am "
                 sh 'whoami'
                 sh '''
-                sh -o StrictHostKeyChecking=no -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com'
+                sh -o StrictHostKeyChecking=no -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com
                  exit
                  '''
                echo "Start application"
