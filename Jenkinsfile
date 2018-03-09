@@ -25,9 +25,7 @@ pipeline {
                sh '''
                     echo "Starting Deploy phase"
                     scp  -o StrictHostKeyChecking=no -i /data/jenkins.pem -r /var/lib/jenkins/.m2/repository/be/inventj/notemanager-api/1.0-SNAPSHOT/notemanager-api-1.0-SNAPSHOT.jar jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com:/data/notes
-                     ssh -o StrictHostKeyChecking=no -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com "/data/notes/start.sh"              
-                   echo "Starting application"  
-                    echo "DONE"
+                     ssh -o StrictHostKeyChecking=no -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com "/data/notes/start.sh"
                   '''
             }
         }
