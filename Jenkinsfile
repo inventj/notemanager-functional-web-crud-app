@@ -27,7 +27,7 @@ pipeline {
                 echo "Copy JAR"
                 echo "i am "
                 sh 'whoami'
-                sh 'ssh -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com'
+                sh 'ssh -o StrictHostKeyChecking=no -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com'
                 echo "Start application"
                 echo "DONE"
             }
