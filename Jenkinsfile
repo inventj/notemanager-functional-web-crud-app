@@ -25,6 +25,7 @@ pipeline {
                 echo "Starting Deploy phase"
                 echo "Stop running application"
                 echo "Copy JAR"
+                sh 'ssh -i jenkins_notes.ppk jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com'
                 echo "Start application"
                 echo "DONE"
             }
