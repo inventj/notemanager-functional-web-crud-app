@@ -25,6 +25,8 @@ pipeline {
                sh '''
                     echo "Starting Deploy phase"
                     echo "Stop running application"
+                    cd '/data/notes'
+                    ls -l
                     '/data/notes/stop.sh'
                     echo "Copy JAR"
                     ssh -o StrictHostKeyChecking=no -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com "cp /var/lib/jenkins/.m2/repository/be/inventj/notemanager-api/1.0-SNAPSHOT/notemanager-api-1.0-SNAPSHOT.jar /data/notes/notes.jar"
