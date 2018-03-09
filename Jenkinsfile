@@ -28,9 +28,7 @@ pipeline {
                 echo "i am "
                 sh 'whoami'
                 sh '''
-                ssh -o StrictHostKeyChecking=no -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com
-                 mkdir test
-                 ls -ltr
+                ssh -o StrictHostKeyChecking=no -t -t -i /data/jenkins.pem jenkins@ec2-18-197-144-95.eu-central-1.compute.amazonaws.com "ls -ltr"
                  '''
                echo "Start application"
                 echo "DONE"
