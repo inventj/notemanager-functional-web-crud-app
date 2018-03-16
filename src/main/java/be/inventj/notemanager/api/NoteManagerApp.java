@@ -14,4 +14,5 @@ public class NoteManagerApp {
 	public static void main(String [] args){
 		SpringApplication.run(NoteManagerApp.class, args);
 	}
+
 }

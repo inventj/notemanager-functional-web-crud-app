@@ -14,7 +14,7 @@ import static org.springframework.web.reactive.function.BodyInserters.fromObject
 @Component
 public class VersionHandler {
 
-    public static final String VERSION = "notemanager-author-api-v1.0";
+    public static final String VERSION = "author-api-v1.0";
 
     public Mono<ServerResponse> getVersion(ServerRequest request) {
         return ServerResponse.ok().contentType(APPLICATION_JSON).body(fromObject(VERSION));

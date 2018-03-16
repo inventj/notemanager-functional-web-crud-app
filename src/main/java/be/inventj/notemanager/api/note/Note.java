@@ -1,19 +1,33 @@
 package be.inventj.notemanager.api.note;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * Created by j.peeters on 17/01/2018.
  */
+@Document
 public class Note {
 
-    private Long id;
+    @Id
+    private String id;
     private String title;
     private String content;
 
-    public Long getId() {
+    public Note() {
+    }
+
+    public Note(@JsonProperty("title") String title, @JsonProperty("content") String content) {
+        this.title = title;
+        this.content = content;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

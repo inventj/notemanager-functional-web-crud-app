@@ -1,15 +1,12 @@
 package be.inventj.notemanager.api.author;
 
 import org.socialsignin.spring.data.dynamodb.repository.EnableScan;
-import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 
 /**
  * Created by j.peeters on 05/12/2017.
  */
 @EnableScan
-public interface AuthorRepository extends CrudRepository<Author, String> {
-    List<Author> findAll();
+public interface AuthorRepository extends ReactiveCrudRepository<Author, String> {
 }
