@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    tools {
-        maven 'mvn'
-        jdk 'java'
-    }
     stages {
         stage ('Initialize') {
             steps {
@@ -17,6 +13,7 @@ pipeline {
         stage ('Build') {
             steps {
               echo 'doing the build'
+               sh 'mvn -Dmaven.test.failure.ignore=true clean install'
             }
           
         }
